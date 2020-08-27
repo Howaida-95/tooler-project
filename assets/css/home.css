@@ -1,0 +1,313 @@
+/* global */
+:root{
+  --main-color: #903749;
+  --dark-blue: #2b2e4a;
+  --dark-grey: #7e7e7e;
+  --grey: #9d9ea9;
+  --other-grey: #686a7d;
+  --light-grey: #cccc;
+  --grey-bg: #cacad1;
+  --logo-color: #523549;
+  --nav-links-color: #2a2e49;
+  --service-bg: #edc6c6;
+  --service-bg-2: #e8dcdc;
+  --white: #fff;
+  /* updates section colors */
+  --updates-color: #e5d7d8; 
+  --updates-border: #ced4da;
+  --updates-bg: #e84545;
+
+  --transition: all 0.12s ease-in-out;
+  --primary-font: 'Mada', sans-serif;
+  --secondary-font: 'Merienda', cursive;
+}
+body{
+  margin-top: 80px;
+  font-family: var(--primary-font);
+}
+a{
+  text-decoration: none;
+}
+/*--------------- header section ------------------ */
+/* navbar */
+.header .navbar{
+  background-color: #fff;
+}
+.header .navbar .logo-icon i{
+  color: var(--main-color);
+  animation: spin 10s linear infinite;
+}
+@keyframes spin {/* logo icon animation */
+  100%{transform : rotate(360deg)}
+}
+.header .navbar .navbar-brand{
+  color: var(--logo-color);
+  font-size: 36px;
+  font-family: var(--secondary-font);
+}
+.header .navbar li:not(:last-of-type){
+  margin-right: 0;
+}
+.header .navbar .nav-link{
+  color: var(--nav-links-color);
+}
+
+.header .navbar li:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px var(--main-color);  
+  transform: scaleX(0);  
+  transition: var(--transition);
+}
+.header .navbar li:not(:last-of-type):hover:after,
+.header .navbar li.active:not(:last-of-type):after{ 
+  transform: scaleX(1); 
+}
+.navbar-toggler:focus,
+.navbar-toggler:active{
+  outline: 0;
+}
+/* intro */
+.header .intro{
+  min-height: 700px;
+  position: relative;
+}
+
+.header .intro .txt-container{
+  border-left: 3px solid var(--main-color);
+  color: var(--dark-grey);
+}
+.header .intro h1{
+  font-family: var(--secondary-font);
+  color: var(--nav-links-color);
+  font-size: 1.8rem;
+}
+.header .intro span{
+  color: var(--main-color);
+  font-size: 3rem;
+}
+
+.header .intro .txt-container p{
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  line-height:1.4rem;
+}
+
+.header .intro img.intro-bg{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.header .intro img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.header .intro .intro-img-container{
+  position: absolute;
+  right: 5px;
+  bottom: 20px;
+}
+.header .intro .see-more{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+.header .intro .see-more div{
+  width: 40px;
+}
+.header .intro .see-more span{
+  color: var(--light-grey);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+/* media query */
+@media only screen and (min-width: 575px) {
+  .header .intro h1{
+    font-size: 3rem;
+  }
+  .header .intro span{
+    font-size: 4rem;
+  }
+  .header .intro .txt-container p{
+    font-size: 1.6rem;
+    line-height:1.6rem; 
+  }
+}
+@media only screen and (min-width: 678px){
+  .header .intro .intro-img-container{
+    bottom: 100px;
+  }
+}
+@media only screen and (max-width: 574.9px){
+  .header .intro{
+    min-height: 500px;
+  }
+  .header .intro .see-more div{
+    width: 20px;
+  }
+  .header .intro .see-more a{
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (min-width: 992px){
+  .header .navbar li:not(:last-of-type){
+    margin-right: 3rem;
+  }
+}
+
+/*--------------- tools section ------------------ */
+.services{
+  position: relative;
+
+}
+.services .service-bg{
+  position: absolute;
+  top: -0.1rem;
+  left: 0;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+.services img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.services .service-one{
+  background-color: var(--service-bg);
+}
+.services .service-two,
+.services .service-three{
+  background-color: var(--service-bg-2);
+}
+.services .service p{
+  color: var(--dark-grey);
+}
+/* media query */
+
+@media only screen and (min-width: 992px){
+  .services .service{ 
+    width: 300px;
+  }
+}
+
+/*--------------- tools section ------------------ */
+.tools{
+  background-color: var(--dark-blue);
+}
+.tools h2, .tools h4{
+  color: var(--grey);
+}
+.tools p{
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--other-grey)
+}
+@media only screen and (min-width: 575px){
+  .tools p{
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+}
+.tools .owl-carousel .item{
+  background-color: var(--grey-bg);
+  transition: var(--transition);
+}
+.tools .owl-carousel .item:hover{
+  background-color: var(--white);
+}
+/* change the position of next, prev btn*/
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+button:focus {
+  outline: 0;
+}
+.owl-next span,
+.owl-prev span{
+  color: var(--grey-bg);
+  font-size: 60px;
+  transition: var(--transition);
+}
+.owl-next span:hover,
+.owl-prev span:hover{
+  color: var(--white);
+  font-size: 60px;
+}
+.owl-prev {
+  left: -2rem;
+}
+.owl-next {
+  right: -2rem;
+}
+/* styling carousel dots */
+.tools .owl-carousel .owl-dots{
+  text-align: center;
+}
+
+/* media query */
+@media only screen and (max-width: 991.99px){
+  .tools .contact {
+    text-align: center;
+  }
+}
+
+/*--------------- footer section ------------------ */
+/* updates*/
+.updates{
+  background-color: var(--updates-bg);
+  color: var(--updates-color)
+}
+.form-control,
+.updates .btn{
+  border: 1px solid var(--updates-border);
+  color: var(--updates-color);
+}
+.updates .btn:hover{
+  background-color: var(--white);
+  color: var(--updates-bg);
+}
+.form-control:focus {
+  color: initial;
+  border-color: var(--updates-border);
+  outline: 0;
+  box-shadow: none;
+}
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+/* svg shape */
+.svg-container{
+  position: relative;
+  background-color: var(--updates-bg);
+  margin-bottom: 20%;
+}
+.svg-container .svg-img{
+  position: absolute;
+  top: -0.1rem;
+  left: 0;
+}
+.svg-container .svg-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+/* media */
+.media i{
+  color: var(--dark-grey);
+  transition: var(--transition);
+}
+.media i:hover{
+  color: var(--main-color);
+}
+.media p{
+  color: var(--dark-grey);
+  font-size: 0.8rem;
+}
