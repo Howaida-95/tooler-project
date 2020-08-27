@@ -7,7 +7,7 @@ include __DIR__ . '/_header.php';
   <!----------------------- header ------------------------>
   <section class="header">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="logo-icon mr-2">
